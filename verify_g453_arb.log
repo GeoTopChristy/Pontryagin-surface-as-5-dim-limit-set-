@@ -1,0 +1,8 @@
+Krawczyk inclusion: PASS
+Unique zero certified in the radius-1e-40 box
+Spacelike poles: PASS
+Certified non-edges checked: 5240
+All non-edges satisfy H > 1.0627: PASS
+Smallest interval encountered:
+  pair = (B_0, D_1)
+  H = [1.0627365391573188754714869416872504002 +/- 4.21e-38]
