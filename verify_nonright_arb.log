@@ -1,0 +1,43 @@
+m=5, p=2
+  Krawczyk inclusion: PASS (unique zero in radius-1e-40 box)
+  spacelike poles and intended angle branches: PASS
+  non-edges checked: 75
+  H(C_1,O_c) edge: [0.250000000000000000000000000000000000000 +/- 3.63e-40]
+  H(A_1,O_c): [3.76669394800156446363652286345296105573 +/- 4.77e-39]
+  smallest non-edge interval: (('C', 0), ('C', 5), [1.45694768199930732822039417574539455486 +/- 6.92e-39])
+  minima by unordered orbit family:
+    AA [2.61803398874989484820458683436563811772 +/- 1.94e-39]
+    AC [3.75372768813366356882505538769936407417 +/- 5.58e-39]
+    AO [3.76669394800156446363652286345296105573 +/- 4.77e-39]
+    CC [1.45694768199930732822039417574539455486 +/- 6.92e-39]
+  non-edges not certified above 1: 0
+  all non-edges satisfy H > 1.45: PASS
+m=5, p=3
+  Krawczyk inclusion: PASS (unique zero in radius-1e-40 box)
+  spacelike poles and intended angle branches: PASS
+  non-edges checked: 145
+  H(C_1,O_c) edge: [0.250000000000000000000000000000000000000 +/- 4.61e-40]
+  H(A_1,O_c): [2.61219190712319247803634583106544967188 +/- 5.73e-39]
+  smallest non-edge interval: (('C', 0), ('C', 5), [1.10829463662727051081546801275414349408 +/- 3.78e-39])
+  minima by unordered orbit family:
+    AA [2.61803398874989484820458683436563811772 +/- 1.87e-39]
+    AC [4.07758986161580360196743032012873432251 +/- 8.98e-39]
+    AO [2.61219190712319247803634583106544967188 +/- 5.73e-39]
+    CC [1.10829463662727051081546801275414349408 +/- 3.78e-39]
+  non-edges not certified above 1: 0
+  all non-edges satisfy H > 1.10: PASS
+m=5, p=4
+  Krawczyk inclusion: PASS (unique zero in radius-1e-40 box)
+  spacelike poles and intended angle branches: PASS
+  non-edges checked: 240
+  H(C_1,O_c) edge: [0.250000000000000000000000000000000000000 +/- 3.30e-40]
+  H(A_1,O_c): [1.430753461773971198335739747322033011950 +/- 9.28e-40]
+  smallest non-edge interval: (('C', 0), ('C', 5), [1.09294699989888369486824214843851552771 +/- 7.44e-39])
+  minima by unordered orbit family:
+    AA [2.61803398874989484820458683436563811772 +/- 1.86e-39]
+    AC [4.1408471095214382773178133608872357728 +/- 1.36e-38]
+    AO [1.430753461773971198335739747322033011950 +/- 9.28e-40]
+    CC [1.09294699989888369486824214843851552771 +/- 7.44e-39]
+  non-edges not certified above 1: 0
+  all non-edges satisfy H > 1.09: PASS
+All non-edges satisfy H > 1: PASS
