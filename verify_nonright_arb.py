@@ -7,7 +7,8 @@ For each requested p, this program first uses a 256-bit Krawczyk
 inclusion to certify an exact solution of the five edge relations near
 the printed decimal data (a, c, and w_c are held at their printed decimal
 values).  The fifth coordinate o of O_c is an additional unknown.  The
-program then checks every non-edge by Arb ball arithmetic.
+program then checks every non-edge by Arb ball arithmetic and certifies a
+nonzero 6-by-6 pole minor.
 
 With no command-line arguments, the program certifies p = 2, 3, and 4.
 No network access is used while the program runs.
@@ -233,6 +234,13 @@ def certify(p, datum):
     vertices.extend(("C", i, rotate(C, i, p)) for i in range(M * p))
     vertices.append(("O", 0, O))
 
+    minor_columns = [A, rotate(A, 1, p), C, rotate(C, 1, p), rotate(C, 2, p), O]
+    pole_minor = arb_mat(
+        [[vector[row] for vector in minor_columns] for row in range(6)]
+    ).det()
+    if pole_minor.contains(arb(0)):
+        raise RuntimeError("p=%d: the selected pole minor contains zero" % p)
+
     failures = []
     minimum = None
     family_minima = {}
@@ -242,6 +250,11 @@ def certify(p, datum):
             if is_edge(left, right, p):
                 continue
             inner = lorentz(left[2], right[2])
+            if not (inner < arb(0)):
+                raise RuntimeError(
+                    "p=%d: non-edge sign failed for %s and %s: %s"
+                    % (p, left[0:2], right[0:2], inner)
+                )
             h_value = inner**2 / (
                 lorentz(left[2], left[2]) * lorentz(right[2], right[2])
             )
@@ -262,7 +275,9 @@ def certify(p, datum):
     print("m=%d, p=%d" % (M, p))
     print("  Krawczyk inclusion: PASS (unique zero in radius-1e-40 box)")
     print("  spacelike poles and intended angle branches: PASS")
+    print("  nonzero pole minor det(A_1,A_2,C_1,C_2,C_3,O_c):", pole_minor)
     print("  non-edges checked:", checked)
+    print("  all non-edge inner products are strictly negative: PASS")
     print("  H(C_1,O_c) edge:", c_o)
     print("  H(A_1,O_c):", a_o)
     print("  smallest non-edge interval:", minimum)

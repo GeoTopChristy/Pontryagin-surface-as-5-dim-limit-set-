@@ -1,0 +1,118 @@
+Verification record for verify_sections32_33_arb.py.  The Krawczyk,
+spacelikeness, sign, pole-minor, and inertia lines were generated with
+python-flint 0.6.0 at 256-bit precision.  After the H > 1 branch was added,
+the H lines were independently recomputed on the same radius-1e-30 root
+boxes with Sage RealBallField(256), which is backed by Arb.
+
+p=2, m=5, N=26
+  Krawczyk inclusion: PASS
+  spacelike poles: PASS
+  non-edges checked: 250
+  all non-edge inner products are strictly negative: PASS
+  closest non-edge inner-product interval: (('C', 5), ('C', 7), [-0.29836882882364918075932129337 +/- 4.57e-30])
+  all non-edges satisfy H > 1: PASS
+  smallest non-edge H interval: (('B', 0), ('O', 0), [1.10549431766245636678413523952544876314991639923700545307356233960231869993 +/- 1.65e-75])
+  nonzero pole minor det(A_1,A_2,B_1,B_2,C_1,O_c): [0.19668866902458025038778755846 +/- 8.41e-30]
+  normalized Gram inertia: (5,1,20): PASS
+p=2, m=6, N=31
+  Krawczyk inclusion: PASS
+  spacelike poles: PASS
+  non-edges checked: 375
+  all non-edge inner products are strictly negative: PASS
+  closest non-edge inner-product interval: (('C', 5), ('C', 7), [-0.35678861249024015177128457517 +/- 4.53e-30])
+  all non-edges satisfy H > 1: PASS
+  smallest non-edge H interval: (('B', 0), ('O', 0), [1.14855467856516999786274782307503137802692943511421207869316563621177502214 +/- 5.33e-75])
+  nonzero pole minor det(A_1,A_2,B_1,B_2,C_1,O_c): [0.13284077855251923806660148929 +/- 6.60e-30]
+  normalized Gram inertia: (5,1,25): PASS
+p=2, m=7, N=36
+  Krawczyk inclusion: PASS
+  spacelike poles: PASS
+  non-edges checked: 525
+  all non-edge inner products are strictly negative: PASS
+  closest non-edge inner-product interval: (('C', 4), ('C', 6), [-0.38542058850077586188476659941 +/- 6.58e-30])
+  all non-edges satisfy H > 1: PASS
+  smallest non-edge H interval: (('B', 0), ('O', 0), [1.19242138747186890036270072637964678188084831405648490789448597746796848498 +/- 5.72e-75])
+  nonzero pole minor det(A_1,A_2,B_1,B_2,C_1,O_c): [0.07607654655014253932821876836 +/- 4.27e-30]
+  normalized Gram inertia: (5,1,30): PASS
+p=2, m=8, N=41
+  Krawczyk inclusion: PASS
+  spacelike poles: PASS
+  non-edges checked: 700
+  all non-edge inner products are strictly negative: PASS
+  closest non-edge inner-product interval: (('A', 0), ('C', 1), [-0.33925203106069093050055022168 +/- 4.71e-30])
+  all non-edges satisfy H > 1: PASS
+  smallest non-edge H interval: (('B', 0), ('O', 0), [1.22116641579565755292235057466883225402362025742224174626003130996120554910 +/- 3.06e-75])
+  nonzero pole minor det(A_1,A_2,B_1,B_2,C_1,O_c): [0.045404196759477962758499241025 +/- 8.44e-31]
+  normalized Gram inertia: (5,1,35): PASS
+p=2, m=9, N=46
+  Krawczyk inclusion: PASS
+  spacelike poles: PASS
+  non-edges checked: 900
+  all non-edge inner products are strictly negative: PASS
+  closest non-edge inner-product interval: (('A', 0), ('C', 1), [-0.26505616104993806248886088854 +/- 2.33e-30])
+  all non-edges satisfy H > 1: PASS
+  smallest non-edge H interval: (('B', 0), ('O', 0), [1.23962828377648571691093136387871707121942299274433114849088005151416654564 +/- 2.47e-75])
+  nonzero pole minor det(A_1,A_2,B_1,B_2,C_1,O_c): [0.029306398685224540544688050394 +/- 8.02e-31]
+  normalized Gram inertia: (5,1,40): PASS
+p=2, m=10, N=51
+  Krawczyk inclusion: PASS
+  spacelike poles: PASS
+  non-edges checked: 1125
+  all non-edge inner products are strictly negative: PASS
+  closest non-edge inner-product interval: (('B', 0), ('B', 10), [-0.220400154686838514412257828755518593478931208769972852843730693041808378810 +/- 8.41e-76])
+  all non-edges satisfy H > 1: PASS
+  smallest non-edge H interval: (('B', 0), ('O', 0), [1.25185298825610645036932298439321617160699011415940281127719411964690029055 +/- 5.56e-75])
+  nonzero pole minor det(A_1,A_2,B_1,B_2,C_1,O_c): [0.018742935900699709849026717916 +/- 3.53e-31]
+  normalized Gram inertia: (5,1,45): PASS
+p=2, m=11, N=56
+  Krawczyk inclusion: PASS
+  spacelike poles: PASS
+  non-edges checked: 1375
+  all non-edge inner products are strictly negative: PASS
+  closest non-edge inner-product interval: (('B', 0), ('B', 11), [-0.178820659487353001739895235867475706523741780117022646653579093726593863869 +/- 8.80e-76])
+  all non-edges satisfy H > 1: PASS
+  smallest non-edge H interval: (('B', 0), ('B', 11), [1.2336370190734778655940058539880155038815661602141910406390568886850762234 +/- 4.09e-74])
+  nonzero pole minor det(A_1,A_2,B_1,B_2,C_1,O_c): [0.012758506249154194918228274400 +/- 4.13e-31]
+  normalized Gram inertia: (5,1,50): PASS
+p=2, m=12, N=61
+  Krawczyk inclusion: PASS
+  spacelike poles: PASS
+  non-edges checked: 1650
+  all non-edge inner products are strictly negative: PASS
+  closest non-edge inner-product interval: (('B', 0), ('B', 12), [-0.148137532329059372725816829548576511629792161114306786028809302166708444532 +/- 8.89e-76])
+  all non-edges satisfy H > 1: PASS
+  smallest non-edge H interval: (('B', 0), ('B', 12), [1.1918120754509286947773065390802121796028865067304607258285975807253523590 +/- 3.88e-74])
+  nonzero pole minor det(A_1,A_2,B_1,B_2,C_1,O_c): [0.008934235363701275613145002261 +/- 4.06e-31]
+  normalized Gram inertia: (5,1,55): PASS
+p=2, m=13, N=66
+  Krawczyk inclusion: PASS
+  spacelike poles: PASS
+  non-edges checked: 1950
+  all non-edge inner products are strictly negative: PASS
+  closest non-edge inner-product interval: (('C', 0), ('C', 13), [-0.11798852438908832793116205613 +/- 3.66e-30])
+  all non-edges satisfy H > 1: PASS
+  smallest non-edge H interval: (('B', 0), ('B', 13), [1.1605771714444242789458390373449293225833920884714054410212950526084946096 +/- 6.06e-74])
+  nonzero pole minor det(A_1,A_2,B_1,B_2,C_1,O_c): [0.0063968829812215500367477641279 +/- 9.02e-32]
+  normalized Gram inertia: (5,1,60): PASS
+p=2, m=14, N=71
+  Krawczyk inclusion: PASS
+  spacelike poles: PASS
+  non-edges checked: 2275
+  all non-edge inner products are strictly negative: PASS
+  closest non-edge inner-product interval: (('C', 0), ('C', 14), [-0.09026699751577177536147440179 +/- 2.99e-30])
+  all non-edges satisfy H > 1: PASS
+  smallest non-edge H interval: (('B', 0), ('B', 14), [1.1365652151491001731470644538549797805646332600513667926304640028099390444 +/- 3.90e-74])
+  nonzero pole minor det(A_1,A_2,B_1,B_2,C_1,O_c): [0.004658958888201821214719065732 +/- 1.29e-31]
+  normalized Gram inertia: (5,1,65): PASS
+p=3, m=6, N=43
+  Krawczyk inclusion: PASS
+  spacelike poles: PASS
+  non-edges checked: 771
+  all non-edge inner products are strictly negative: PASS
+  closest non-edge inner-product interval: (('C', 8), ('C', 14), [-0.42856515915923343243325350942 +/- 4.87e-30])
+  all non-edges satisfy H > 1: PASS
+  smallest non-edge H interval: (('B', 0), ('B', 6), [1.14948026191244507368033091435781272541663484488603977267496738622844901071 +/- 7.95e-75])
+  nonzero pole minor det(A_1,A_2,B_1,B_2,C_1,O_c): [0.15074210587971649642201883625 +/- 6.00e-30]
+  normalized Gram inertia: (5,1,37): PASS
+All Subsection 3.2 and 3.3 candidates: PASS
+Independent Sage RealBallField(256)/Arb verification of every new H > 1 line: PASS

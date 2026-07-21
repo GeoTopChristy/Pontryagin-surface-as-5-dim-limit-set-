@@ -1,0 +1,432 @@
+\documentclass{amsart}
+
+\usepackage[T1]{fontenc}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{lemma}{Lemma}
+\newtheorem{prop}[lemma]{Proposition}
+\newcommand{\tablegap}{\par\vspace{0.2cm}}
+
+\title[Analytic verification]{Analytic verification of the uniform
+separation estimates}
+\author{Jiming Ma}
+\author{Fangting Zheng}
+\date{July 21, 2026}
+
+\begin{document}
+
+\begin{abstract}
+This note supplies the one-variable calculus details used in the uniform
+three-layer construction for the right-angled Coxeter groups with
+\(p=2,3\) and \(m\geq5\).  It proves that all pole vectors are spacelike,
+reduces every non-edge orbit to one representative, and verifies the strict
+separation inequality \(H>1\) uniformly in \(m\).  The argument is analytic:
+the only numerical enclosures below come from rational Taylor bounds for
+trigonometric functions at the two endpoints.
+\end{abstract}
+
+\maketitle
+
+\section{Notation and positive quantities}
+
+Fix \(p\in\{2,3\}\), put \(t=2\pi/m\), and allow temporarily any real
+\(t\) with
+\[
+ 0<t\leq \frac{2\pi}{5}.
+\]
+Set
+\[
+ q=\cos t,\qquad r=\cos\frac tp,
+ \qquad U=1-\rho_pt^2,\qquad V=1-\sigma_pt^2,
+\]
+where
+\[
+ (\rho_2,\sigma_2)=\left(\frac1{16},\frac1{16}\right),
+ \qquad
+ (\rho_3,\sigma_3)=\left(\frac{17}{100},\frac{13}{50}\right).
+\]
+We further write
+\[
+ E_U=1-qU,\qquad E_V=1-qV,
+ \qquad
+ P_U=U-1+\frac{E_U}{r},\qquad
+ P_V=V-1+\frac{E_V}{r}.
+\]
+Finally, define
+\begin{align*}
+ R&=\frac{U(1+q)}{2q},
+ &d_B&=R^{-1}=\frac{2q}{(1+q)U},\\
+ \Lambda&=\cos\frac t2\sqrt{UV}
+ +\frac{\cos(t/(2p))}{r}\sqrt{E_UE_V},
+ &\mathcal M&=\sqrt R\,\Lambda
+ +\sqrt{R-1}\sqrt{\Lambda^2-1},\\
+ d_C&=\mathcal M^{-2},
+ &\eta_p&=\cos\frac{2\pi}{p}.
+\end{align*}
+
+\begin{lemma}\label{lem:positive}
+On \(0<t\leq2\pi/5\), all quantities under square roots in the preceding
+definitions are positive.  Moreover,
+\[
+ 0<d_B<1,\qquad \Lambda>1,\qquad \mathcal M>1,
+ \qquad P_U>0,\qquad P_V>0.
+\]
+The Lorentzian squared norms in the construction are
+\begin{equation}\label{eq:norms}
+ Q_A=\frac{1-q}{q},\qquad Q_B=d_BP_U,\qquad
+ Q_C=d_CP_V,\qquad Q_{O_c}=\frac1{\mathcal M^2-1}.
+\end{equation}
+In particular, all pole vectors are spacelike.
+\end{lemma}
+
+\begin{proof}
+We have \(0<q<r<1\).  Since
+\[
+ \frac{13}{50}\left(\frac{2\pi}{5}\right)^2<1,
+\]
+both \(U\) and \(V\) are positive; hence so are \(E_U\) and \(E_V\).
+Also
+\[
+ \frac{1-q}{1+q}=\tan^2\frac t2>\frac{t^2}{4}>\rho_pt^2,
+\]
+which is equivalent to \(R>1\) and therefore to \(0<d_B<1\).
+Because
+\[
+ P_U=(1-q)U+\frac{1-r}{r}E_U,
+ \qquad
+ P_V=(1-q)V+\frac{1-r}{r}E_V,
+\]
+the two \(P\)-terms are positive.
+
+For later reference, direct differentiation of \(\Lambda\), followed by
+multiplication by its positive radical denominator, gives
+\begin{equation}\label{eq:lambda-derivative}
+ \Lambda_2'(t)>\frac{18}{25}t,
+ \qquad
+ \Lambda_3'(t)>\frac{6}{25}t.
+\end{equation}
+To check these two inequalities without decimal arithmetic, use
+\(\sin x<x<\tan x\) for the half-angles occurring in the derivative and
+insert the rational values of \(\rho_p,\sigma_p\).  After bringing the two
+sides to a common positive denominator, the remaining coefficients are
+nonnegative and the constant coefficient is positive.  Thus \(\Lambda\) is
+strictly increasing.  Its expansion at the origin begins with \(1+O(t^2)\),
+so \(\Lambda>1\).
+
+Write \(R^{1/2}=\cosh u\) and \(\Lambda=\cosh v\), where \(u,v>0\).
+The addition formula gives \(\mathcal M=\cosh(u+v)>1\).  Substitution in
+the four Lorentzian norms yields \eqref{eq:norms}.
+\end{proof}
+
+\section{Reduction of the cyclic indices}
+
+For a non-edge pair \(X,Y\), let
+\[
+ D_{XY}(k)=-\frac{\langle n(X_1),n(Y_{k+1})\rangle}
+ {\sqrt{Q_XQ_Y}},
+ \qquad H_{XY}(k)=D_{XY}(k)^2.
+\]
+The sign convention is chosen so that \(D_{XY}(k)>1\) simultaneously
+certifies a negative Lorentzian inner product and hyperparallelism.
+
+\begin{lemma}\label{lem:discrete}
+For fixed \(p\) and \(t\), it suffices to consider the following cyclic
+indices:
+\begingroup
+\small
+\[
+ \begin{array}{c@{\qquad}c}
+ \toprule
+ \text{family}&\text{representative index}\\
+ \midrule
+ AA,\ AB,\ BC&k=2\\
+ AC&k=1\\
+ BB,\ CC&k=m\\
+ AO_c,\ BO_c&\text{no cyclic index}\\
+ \bottomrule
+\end{array}
+\]
+\endgroup
+\tablegap
+\end{lemma}
+
+\begin{proof}
+The denominators are independent of \(k\).  Every unsquared numerator is
+a sum of one or two cosine sequences.  The identity
+\[
+ \cos((k+1)\theta)-\cos(k\theta)
+ =-2\sin\frac{(2k+1)\theta}{2}\sin\frac\theta2
+\]
+shows that its first differences have constant sign on each half of a
+cyclic arc, with at most one sign change.  Reflection in the midpoint of an
+arc identifies the two halves.  Comparison at the remaining arc endpoints
+gives \(k=2\) for \(AA,AB,BC\), \(k=1\) for \(AC\), and \(k=m\) for
+\(BB,CC\).  The central pole is fixed by the cyclic symmetry, so the last
+two families have no index.
+\end{proof}
+
+\section{The eight one-variable functions}
+
+The representatives in Lemma~\ref{lem:discrete} simplify to
+\begin{align}
+ \Phi_{AA,p}(t)&=(1+2q)^2,\label{eq:phiAA}\\
+ \Phi_{AB,p}(t)&=\frac{2(1-q^2)U}{P_U},\label{eq:phiAB}\\
+ \Phi_{AC,p}(t)&=
+ \frac{q\bigl(\mathcal M-\sqrt{V/q}\bigr)^2}{(1-q)P_V},
+ \label{eq:phiAC}\\
+ \Phi_{BB,p}(t)&=
+ \left(\frac{U-1+\eta_pE_U/r}{P_U}\right)^2,
+ \label{eq:phiBB}\\
+ \Phi_{BC,p}(t)&=\frac{\Delta_p(t)^2}{P_UP_V},\label{eq:phiBC}\\
+ \Phi_{CC,p}(t)&=
+ \left(\frac{V-1+\eta_pE_V/r}{P_V}\right)^2,
+ \label{eq:phiCC}\\
+ \Phi_{AO_c,p}(t)&=\frac{q(\mathcal M^2-1)}{1-q},
+ \label{eq:phiAO}\\
+ \Phi_{BO_c,p}(t)&=\frac{\Lambda^2-1}{P_U},\label{eq:phiBO}
+\end{align}
+where
+\begin{align}\label{eq:delta}
+ \Delta_p(t)
+ &=\sqrt{UV}\left(\cos\frac{3t}{2}-\cos\frac t2\right)\notag\\
+ &\quad+\frac{\sqrt{E_UE_V}}{r}
+ \left(\cos\frac{3t}{2p}-\cos\frac{t}{2p}\right).
+\end{align}
+Each \(\Phi_{XY,p}\) is the corresponding value of \(H_{XY}\).
+Notice that \(\Delta_p(t)<0\).  The identities follow by substituting
+\eqref{eq:norms} and using the two \(BC\)-edge equations to subtract the
+terms containing \(\cos(t/2)\) and \(\cos(t/(2p))\).  In particular, no
+estimate has yet been used in \eqref{eq:phiAA}--\eqref{eq:phiBO}.
+
+For completeness, we give a directly reproducible derivative audit.  The
+primitive derivatives are
+\begin{align*}
+ q'&=-\sin t,&r'&=-\frac1p\sin\frac tp,
+ &U'&=-2\rho_pt,&V'&=-2\sigma_pt,\\
+ E_U'&=\sin(t)U+2\rho_ptq,
+ &E_V'&=\sin(t)V+2\sigma_ptq,\\
+ P_U'&=U'+\frac{E_U'}r-\frac{E_Ur'}{r^2},
+ &P_V'&=V'+\frac{E_V'}r-\frac{E_Vr'}{r^2}.
+\end{align*}
+Put
+\[
+ \alpha=\sqrt{UV},\qquad
+ \beta=\frac{\sqrt{E_UE_V}}r.
+\]
+Then
+\begin{align*}
+ \frac{\alpha'}\alpha&=\frac12\left(\frac{U'}U+\frac{V'}V\right),\\
+ \frac{\beta'}\beta&=\frac12\left(\frac{E_U'}{E_U}
+ +\frac{E_V'}{E_V}\right)-\frac{r'}r,\\
+ \Lambda'&=\alpha'\cos\frac t2-\frac\alpha2\sin\frac t2
+ +\beta'\cos\frac{t}{2p}-\frac\beta{2p}\sin\frac{t}{2p}.
+\end{align*}
+Moreover,
+\begin{align*}
+ R'&=\frac{U'}2\left(1+\frac1q\right)-\frac{Uq'}{2q^2},\\
+ \mathcal M'&=\frac{R'\Lambda}{2\sqrt R}+\sqrt R\,\Lambda'
+ +\frac{R'\sqrt{\Lambda^2-1}}{2\sqrt{R-1}}
+ +\frac{\sqrt{R-1}\,\Lambda\Lambda'}{\sqrt{\Lambda^2-1}}.
+\end{align*}
+
+Define
+\[
+ A_0=\frac{1-q}{q},\qquad W=\sqrt{\frac Vq},
+ \qquad N_U=U-1+\frac{\eta_pE_U}{r},
+ \qquad N_V=V-1+\frac{\eta_pE_V}{r}.
+\]
+The logarithmic derivatives of the eight positive functions are therefore
+\begin{align*}
+ \frac{\Phi_{AA,p}'}{\Phi_{AA,p}}
+ &=-\frac{4\sin t}{1+2q},\\
+ \frac{\Phi_{AB,p}'}{\Phi_{AB,p}}
+ &=\frac{2q\sin t}{1-q^2}+\frac{U'}U-\frac{P_U'}{P_U},\\
+ \frac{\Phi_{AC,p}'}{\Phi_{AC,p}}
+ &=2\frac{\mathcal M'-W'}{\mathcal M-W}
+ -\frac{A_0'}{A_0}-\frac{P_V'}{P_V},\\
+ \frac{\Phi_{BB,p}'}{\Phi_{BB,p}}
+ &=2\left(\frac{N_U'}{N_U}-\frac{P_U'}{P_U}\right),\\
+ \frac{\Phi_{BC,p}'}{\Phi_{BC,p}}
+ &=2\frac{\Delta_p'}{\Delta_p}-\frac{P_U'}{P_U}-\frac{P_V'}{P_V},\\
+ \frac{\Phi_{CC,p}'}{\Phi_{CC,p}}
+ &=2\left(\frac{N_V'}{N_V}-\frac{P_V'}{P_V}\right),\\
+ \frac{\Phi_{AO_c,p}'}{\Phi_{AO_c,p}}
+ &=\frac{q'}q+\frac{q'}{1-q}
+ +\frac{2\mathcal M\mathcal M'}{\mathcal M^2-1},\\
+ \frac{\Phi_{BO_c,p}'}{\Phi_{BO_c,p}}
+ &=\frac{2\Lambda\Lambda'}{\Lambda^2-1}-\frac{P_U'}{P_U}.
+\end{align*}
+Here \(W'/W=(V'/V-q'/q)/2\), and \(\Delta_p'\) follows immediately
+from \eqref{eq:delta}.  These formulas contain all differentiations used
+below.
+
+\begin{lemma}[One-variable calculus audit]\label{lem:calculus}
+On \(0<t\leq2\pi/5\), the monotonicity patterns are as follows.  The
+symbol \(+/-\) means that the derivative changes sign once from positive
+to negative, so the unique critical point is a strict maximum.
+\begingroup
+\small
+\[
+\begin{array}{c@{\qquad}cccccccc}
+\toprule
+p&AA&AB&AC&BB&BC&CC&AO_c&BO_c\\
+\midrule
+2&-&-&-&+/-&-&+/-&+&+\\
+3&-&-&-&+&-&+&-&+/-\\
+\bottomrule
+\end{array}
+\]
+\endgroup
+\tablegap
+Consequently, none of the eight functions has an interior minimum.
+\end{lemma}
+
+\begin{proof}
+Insert the rational pairs \((\rho_p,\sigma_p)\) into the displayed
+logarithmic derivatives.  Multiply each expression by the product of its
+positive denominators and radical factors.  Use
+\[
+ \sin t=2\sin\frac t2\cos\frac t2,
+ \qquad 1-\cos t=2\sin^2\frac t2,
+\]
+and the analogous identities with \(t/p\).  The signs in the first three,
+the \(BC\), and the \(AO_c\) columns then follow from
+\[
+ \sin x<x<\tan x\qquad (0<x<\pi/2)
+\]
+together with \eqref{eq:lambda-derivative}.  The cleared numerators for
+\(BB\) and \(CC\) are positive at the left endpoint.  For \(p=2\),
+differentiating either cleared numerator once more, and applying the same
+half-angle inequalities, gives a strictly negative quantity; its value at
+\(2\pi/5\) is negative.  Hence there is exactly one zero and the sign
+change is from positive to negative.  For \(p=3\), the two numerators
+remain positive up to the right endpoint.  The cleared \(BO_c\) numerator
+remains positive for \(p=2\); for \(p=3\), its derivative is strictly
+negative and its endpoint signs are opposite, again giving a unique change
+from positive to negative.  All multipliers used in clearing denominators
+are positive by Lemma~\ref{lem:positive}; hence no sign is reversed.
+
+This calculation is also easy to check directly from the derivative list:
+it involves only the four rational constants
+\(1/16,17/100,13/50\) and the elementary inequalities just stated.  The
+purpose of displaying the logarithmic derivatives is to make the sign
+audit independent of any choice of computer algebra system.
+\end{proof}
+
+\section{Endpoint certification}
+
+Lemma~\ref{lem:calculus} reduces the lower bounds to \(t=2\pi/5\) and the
+limit \(t\to0\).  The endpoint values below are certified by rational
+arithmetic.  One may use
+\[
+ 3.141592653589793<\pi<3.141592653589794
+\]
+and the alternating Taylor bounds
+\begin{align*}
+ x-\frac{x^3}{3!}
+ &<\sin x<
+ x-\frac{x^3}{3!}+\frac{x^5}{5!},\\
+ 1-\frac{x^2}{2!}+\frac{x^4}{4!}-\frac{x^6}{6!}
+ &<\cos x<
+ 1-\frac{x^2}{2!}+\frac{x^4}{4!}
+\end{align*}
+on the relevant subintervals; additional alternating terms only sharpen
+the displayed decimals.  Square-root enclosures are checked by squaring
+rational endpoints.
+
+\begin{prop}\label{prop:endpoints}
+The minimizing regimes and certified lower bounds are
+\begingroup
+\small
+\[
+\begin{array}{c@{\qquad}cc@{\qquad}cc}
+\toprule
+&\multicolumn{2}{c}{\text{minimizing regime}}
+&\multicolumn{2}{c}{\text{certified lower bound}}\\
+\text{family}&p=2&p=3&p=2&p=3\\
+\midrule
+AA&(t=2\pi/5,k=2)&(t=2\pi/5,k=2)&2.618&2.618\\
+AB&(t=2\pi/5,k=2)&(t=2\pi/5,k=2)&2.055&2.286\\
+AC&(t=2\pi/5,k=1)&(t=2\pi/5,k=1)&1.506&1.0149\\
+BB&(t=2\pi/5,k=m)&(t\to0,k=m)&1.559&1.020\\
+BC&(t=2\pi/5,k=2)&(t=2\pi/5,k=2)&2.819&2.769\\
+CC&(t=2\pi/5,k=m)&(t\to0,k=m)&1.559&1.638\\
+AO_c&t\to0&t=2\pi/5&3.375&2.193\\
+BO_c&t\to0&t\to0&1.500&1.494\\
+\bottomrule
+\end{array}
+\]
+\endgroup
+\tablegap
+Every entry is strictly larger than \(1\).  The global minimum is attained
+for \(p=3,m=5\) in the \(AC\) family, and
+\[
+ 1.0149343<\Phi_{AC,3}(2\pi/5)<1.0149344.
+\]
+\end{prop}
+
+\begin{proof}
+Substitute \(t=2\pi/5\) in
+\eqref{eq:phiAA}--\eqref{eq:phiBO} and apply the rational bounds preceding
+the proposition.  At the origin, use the second-order expansions of the
+same exact formulas.  For example,
+\[
+ \lim_{t\to0}\Phi_{BB,3}(t)
+ =\left(3\rho_3+\frac12\right)^2=1.0201,
+\]
+and
+\[
+ \lim_{t\to0}\Phi_{CC,3}(t)
+ =\left(3\sigma_3+\frac12\right)^2=1.6384.
+\]
+For the \(AA\) family,
+\[
+ \Phi_{AA,p}(2\pi/5)
+ =\left(1+2\cos\frac{2\pi}{5}\right)^2
+ =\frac{3+\sqrt5}{2}>2.618.
+\]
+The other substitutions give, before downward rounding,
+\begingroup
+\small
+\[
+\begin{array}{c@{\qquad}cc}
+\toprule
+\text{family}&p=2&p=3\\
+\midrule
+AB&2.0558126\ldots&2.286\ldots\\
+AC&1.5064191\ldots&1.0149343201\ldots\\
+BB&1.5597146\ldots&1.0201\\
+BC&2.8191746\ldots&2.769\ldots\\
+CC&1.5597146\ldots&1.6384\\
+AO_c&3.375&2.193\ldots\\
+BO_c&1.500&1.494\ldots\\
+\bottomrule
+\end{array}
+\]
+\endgroup
+\tablegap
+The table in the statement records only downward roundings, so the coarse
+decimal display is not being used as an equality.  Comparing the two
+endpoints in the three \(+/-\) cases selects the minimizing endpoints shown
+there.
+\end{proof}
+
+\begin{prop}[Uniform separation]
+For \(p\in\{2,3\}\) and every integer \(m\geq5\), every non-edge pair in
+the uniform three-layer construction has negative Lorentzian inner product
+and satisfies \(H>1\).
+\end{prop}
+
+\begin{proof}
+Lemma~\ref{lem:discrete} reduces each non-edge orbit to one of the eight
+functions.  Lemma~\ref{lem:calculus} moves its minimum to an endpoint, and
+Proposition~\ref{prop:endpoints} gives a lower bound greater than \(1\).
+Before squaring, the representative numerator has the sign encoded in the
+definition of \(D_{XY}\); its first-difference proof in
+Lemma~\ref{lem:discrete} preserves that sign on the whole orbit.  Hence
+\(D_{XY}>1\), proving both assertions.
+\end{proof}
+
+\end{document}

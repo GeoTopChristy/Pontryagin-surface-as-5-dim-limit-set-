@@ -1,8 +1,9 @@
 """Rigorous Arb certificate for the A-B-C-D-E-F-O_c realization.
 
 This file requires python-flint 0.6 or later.  It performs a 256-bit
-Krawczyk inclusion and then checks every non-edge using Arb ball arithmetic.
-No network access is used while the certificate runs.
+Krawczyk inclusion, checks every non-edge using Arb ball arithmetic, and
+certifies a nonzero 6-by-6 pole minor.  No network access is used while the
+certificate runs.
 """
 
 from flint import arb, arb_mat, ctx
@@ -226,6 +227,12 @@ def is_edge(left, right):
 
 
 base = pole_vectors(box)
+pole_minor = arb_mat(
+    [[base[label][row] for label in "ABCDEF"] for row in range(6)]
+).det()
+if pole_minor.contains(arb(0)):
+    raise RuntimeError("The A-B-C-D-E-F pole minor was not certified nonzero")
+
 vertices = [("A", i, rotate(base["A"], i)) for i in range(5)]
 vertices.extend(
     (label, i, rotate(base[label], i)) for label in "BCDEF" for i in range(20)
@@ -248,6 +255,11 @@ for i, left in enumerate(vertices):
         if is_edge(left, right):
             continue
         inner = lorentz(left[2], right[2])
+        if not (inner < arb(0)):
+            raise RuntimeError(
+                "Non-edge sign failed for %s and %s: %s"
+                % (left[0:2], right[0:2], inner)
+            )
         qleft = lorentz(left[2], left[2])
         qright = lorentz(right[2], right[2])
         H = inner**2 / (qleft * qright)
@@ -264,6 +276,8 @@ for i, left in enumerate(vertices):
 
 print("Spacelike poles: PASS")
 print("Norm lower bounds:", norm_lower_bounds)
+print("Nonzero pole minor det(A_1,B_1,C_1,D_1,E_1,F_1):", pole_minor)
 print("Certified non-edges checked:", checked_non_edges)
+print("All non-edge inner products are strictly negative: PASS")
 print("All non-edges satisfy H > 1.0627: PASS")
 print("Smallest interval encountered:", minimum_pair)
