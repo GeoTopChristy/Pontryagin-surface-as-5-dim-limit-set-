@@ -222,7 +222,7 @@ $$
 with outward-rounded Arb balls and verifies
 
 $$
-K(X)\subset\operatorname{int}(X).
+K(X)\subset\mathrm{int}(X).
 $$
 
 This inclusion certifies an exact zero in $X$, locally unique in the
