@@ -258,7 +258,7 @@ certifies that a non-edge pair is hyperparallel.
 The manuscript cites this repository as a single ancillary record rather
 than citing each Python file separately:
 
-> <https://github.com/GeoTopChristy/Pontryagin-surface-as-5-dim-limit-set->.
+> <https://github.com/GeoTopChristy/Pontryagin_surface_5d_limit_set>.
 
 For a submitted or published version, replace the moving repository URL by
 a tagged release URL or a Zenodo DOI whenever possible. The Krawczyk method,
