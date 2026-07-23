@@ -161,8 +161,7 @@ The smallest interval encountered is associated with the pair
 $(B_0,D_1)$:
 
 $$
-H(B_0,D_1)
-=
+H(B_0,D_1)=
 [1.0627365391573188754714869416872504002
 \pm4.21\times10^{-38}].
 $$
